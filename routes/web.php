@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\AdminAuthorController;
 use App\Http\Controllers\Admin\AdminBookController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Auth\ChangePasswordController;
+use App\Http\Controllers\Auth\GoogleAuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Public\AuthorController;
 use App\Http\Controllers\Public\BookController;
@@ -30,6 +31,9 @@ Route::get('/authors/{author}', [AuthorController::class, 'show'])->name('author
 
 Route::get('/books', [BookController::class, 'index'])->name('books.index');
 Route::get('/books/{book}', [BookController::class, 'show'])->name('books.show');
+
+Route::get('/auth/google/redirect', [GoogleAuthController::class, 'redirect'])->name('oauth.google.redirect');
+Route::get('/auth/google/callback', [GoogleAuthController::class, 'callback'])->name('oauth.google.callback');
 
 # Admin vaate osad
 Route::middleware(['auth', 'force.password.change'])->prefix('admin')->name('admin.')->group(function () {

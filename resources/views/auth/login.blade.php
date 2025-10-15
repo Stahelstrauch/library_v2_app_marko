@@ -7,6 +7,14 @@
             <div class="card">
                 <div class="card-header">{{ __('Login') }}</div>
 
+                <div class="my-3">
+                    <a href="{{ route('oauth.google.redirect') }}" class="btn btn-outline-dark d-flex align-items-center justify-content-center w-50 mx-auto">
+                        <img src="{{ asset('images/google.png') }}" alt="Google logo" width="50" class="me-2">
+                        <span>Logi sisse Google-ga</span>
+                    </a>
+                </div>
+                <div class="text-center text-muted small mb-3">või</div>
+
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf

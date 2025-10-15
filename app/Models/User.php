@@ -12,6 +12,9 @@ class User extends Authenticatable
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
 
+    public const LOGIN_METHOD_PASSWORD = 'password';
+    public const LOGIN_METHOD_GOOGLE = 'google';
+
     /**
      * The attributes that are mass assignable.
      *
@@ -23,6 +26,10 @@ class User extends Authenticatable
         'password',
         'is_admin',
         'must_change_password',
+        // Google asjad
+        'google_sub',
+        'last_login_method', //google, local
+        'last_login_at',
     ];
 
     /**
@@ -47,6 +54,7 @@ class User extends Authenticatable
             'password' => 'hashed',
             'is_admin' =>'boolean',
             'must_change_password' => 'boolean',
+            'last_login_at' => 'datetime',
         ];
     }
 }
