@@ -36,6 +36,14 @@
             <input name="password_confirmation" type="password" class="form-control" required>
           </div>
 
+          <div class="mb-3">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="is_admin" id="is_admin">
+              <label class="form-check-label" for="is_admin">
+                Administraator
+              </label>
+            </div>
+
           <div class="d-grid">
             <button class="btn btn-primary">Loo kasutaja</button>
           </div>

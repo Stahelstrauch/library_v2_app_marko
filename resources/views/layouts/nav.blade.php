@@ -11,6 +11,7 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item"><a class="nav-link" href="{{ route('books.index') }}">Raamatud</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ route('authors.index') }}">Autorid</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ route('search') }}">Otsing</a></li>
             </ul>
 
             {{-- Auth plokk --}}
@@ -56,6 +57,11 @@
                                 </a>
                             </li>
                             <li>
+                                <a class="dropdown-item" href="{{ route('admin.books.table') }}">
+                                    <i class="fa-solid fa-file-lines me-2" aria-hidden="true"></i> Raamatud
+                                </a>
+                            </li>
+                            <li>
                                 <a class="dropdown-item" href="{{ route('admin.password.change') }}">
                                     <i class="fa-solid fa-key me-2" aria-hidden="true"></i> Muuda parooli
                                 </a>
@@ -72,6 +78,16 @@
                                 <li>
                                     <a class="dropdown-item" href="{{ url('/admin/books') }}">
                                         <i class="fa-solid fa-book me-2" aria-hidden="true"></i> Raamatud
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="{{ route('admin.imports.index') }}">
+                                        <i class="fa-solid fa-folder me-2" aria-hidden="true"></i> Lae andmed failist
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="{{ url('admin/users') }}">
+                                        <i class="fa-solid fa-user me-2" aria-hidden="true"></i> Kasutajad
                                     </a>
                                 </li>
                                 <li>

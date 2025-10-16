@@ -50,9 +50,11 @@ class AdminBookController extends Controller {
     /**
      * Display the specified resource.
      */
-    public function show(Book $book) {
-        
+    public function show() {
+        $books = Book::with('author')->orderBy('title')->paginate(10);
+        return view('auth.books', compact('books'));
     }
+
 
     /**
      * Show the form for editing the specified resource.
